@@ -20,9 +20,16 @@ android {
     kotlinOptions {
         jvmTarget = libs.versions.jvm.get().toString()
     }
+    packaging {
+        jniLibs {
+            keepDebugSymbols.add("**/*.so")
+            pickFirsts.add("**/*.so")
+        }
+    }
 
     defaultConfig {
         minSdk = libs.versions.android.sdk.min.get().toInt()
+        targetSdk = libs.versions.android.sdk.compile.get().toInt()
         // skip.tools.skip-build-plugin will automatically use Skip.env properties for:
         // applicationId = PRODUCT_BUNDLE_IDENTIFIER
         // versionCode = CURRENT_PROJECT_VERSION
@@ -31,6 +38,10 @@ android {
 
     buildFeatures {
         buildConfig = true
+    }
+
+    lintOptions {
+        disable.add("Instantiatable")
     }
 
     // default signing configuration tries to load from keystore.properties
