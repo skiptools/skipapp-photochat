@@ -16,7 +16,7 @@ let package = Package(
         .library(name: "PhotoChatModel", targets: ["PhotoChatModel"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.0.0"),
+        .package(url: "https://source.skip.tools/skip.git", from: "1.4.0"),
         .package(url: "https://source.skip.tools/skip-sql.git", "0.0.0"..<"2.0.0"),
         .package(url: "https://source.skip.tools/skip-kit.git", "0.0.0"..<"2.0.0")
     ],
