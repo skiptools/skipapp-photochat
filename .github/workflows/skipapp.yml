@@ -1,7 +1,7 @@
 name: skipapp-photochat
 on:
   push:
-    branches: '*'
+    branches: [ main ]
     tags: "[0-9]+.[0-9]+.[0-9]+"
   schedule:
     - cron: '45 6,17 * * *'
