@@ -65,7 +65,7 @@ struct MediaButton : View {
         Button(type == .camera ? "Take Photo" : "Select Media") {
             showPicker = true // activate the media picker
         }
-        .withMediaPicker(type: .camera, isPresented: $showPicker, selectedImageURL: $selectedImageURL)
+        .withMediaPicker(type: type, isPresented: $showPicker, selectedImageURL: $selectedImageURL)
     }
 }
 
